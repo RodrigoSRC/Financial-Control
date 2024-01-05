@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { v4 as uuidv4 } from 'uuid';
 import { StyledHeadline3, StyledParagraph } from "../../Styles/typography";
-import { StyledForm } from "./style";
+import { StyledForm, StyledSelect } from "./style";
 import { StyledInputDescr, StyledInputValue } from "../../Styles/form";
 import { StyledButtonForm } from "../../Styles/button";
 
@@ -54,12 +54,17 @@ export const Form = ({setValueList}) => {
             ></StyledInputValue>
             </div>
 
-            {<select value={typeValue} onChange={(e) => setTypeValue(e.target.value)} required>
+
+            <div className="buttons">
+                <StyledSelect value={typeValue} onChange={(e) => setTypeValue(e.target.value)} required>
                 <option value="Entrada">Entrada</option>
                 <option value="Saída">Saída</option>
-            </select> }
+                </StyledSelect>
 
-            <StyledButtonForm type="submit">Inserir Valor</StyledButtonForm>
+
+                <StyledButtonForm type="submit">Inserir Valor</StyledButtonForm>
+
+            </div>
         </StyledForm>
     );
 };
